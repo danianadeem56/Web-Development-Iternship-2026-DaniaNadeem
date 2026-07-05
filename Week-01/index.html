@@ -1,0 +1,78 @@
+<!-- Step # 1: Set up your files -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Internship 2026_Week 01</title>
+
+    <!-- Step # 4: Style it with CSS -->
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Step # 2: Build the structure with semantic tags -->
+
+    <header>
+      <h1>Dania Nadeem</h1>
+    </header>
+
+    <main>
+      <section>
+        <img src="profile.webp" alt="profile picture" />
+        <div>
+          <p>
+            Assalam o Alaikum! My name is Dania Nadeem. I am a Computer Science
+            student with a strong interest in web development, programming, and
+            database management. I enjoy learning new technologies, solving
+            programming challenges, and building creative projects that improve
+            my skills and experience.
+          </p>
+        </div>
+      </section>
+      <h2>Skills & Interests</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>Java Programming</li>
+        <li>Database Management</li>
+      </ul>
+
+      <!-- Step # 3: Add a validated contact form -->
+
+      <form>
+        <h2>Registration Form</h2>
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required minlength="2" />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label><br />
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          cols="30"
+          required
+        ></textarea>
+        <br /><br />
+
+        <div class="submit">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>
+        Visit my
+        <a
+          href="https://github.com/danianadeem56/Web-Development-Internship-2026-DaniaNadeem"
+          target="_blank"
+          >GitHub Profile</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

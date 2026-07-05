@@ -1,0 +1,137 @@
+/* Step # 4: Style it with CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: plum;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgb(102, 28, 102);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+main {
+  width: 80%;
+  margin: 40px auto;
+  flex: 1;
+}
+
+section {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+img {
+  width: 450px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+section div {
+  max-width: 500px;
+  margin-top: 15%;
+  margin-left: 6%;
+}
+
+section div p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+ul {
+  margin-left: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form {
+  width: 600px;
+  margin: 55px auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+form h2 {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.submit input[type="submit"] {
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0%;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(102, 28, 102);
+}
+
+footer {
+  background-color: rgb(102, 28, 102);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 0%;
+  position: static;
+}
+
+footer p {
+  color: white;
+  text-decoration: none;
+  font-weight: 200;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: plum;
+  text-decoration: underline;
+}
