@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: plum;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Step # 1: Add a sticky navbar */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgb(102, 28, 102);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  color: white;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: plum;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Close icon hidden by default */
+.menu-icon.icon-close {
+  display: none;
+}
+
+/* Step # 2: Break the page into sections */
+
+section {
+  padding: 70px;
+  scroll-margin-top: 80px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px;
+  border: 2px solid purple;
+  margin: 5% auto;
+  background-color: rgb(199, 74, 199);
+  border-radius: 10px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid purple;
+}
+
+.hero h1 {
+  font-size: 35px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+/* About */
+.about {
+  padding: 50px;
+  border: 2px solid purple;
+  margin: 5% auto;
+  background-color: rgb(199, 74, 199);
+  border-radius: 10px;
+
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 20px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: black;
+  text-align: justify;
+}
+
+/* Skills */
+.skills {
+  padding: 80px;
+  border: 2px solid purple;
+  margin: 5% auto;
+  background-color: rgb(199, 74, 199);
+  border-radius: 10px;
+
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 30px;
+}
+
+/* Step # 3: Style the Skills section with Grid */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background: plum;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  transition: .3s;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Projects  */
+.projects {
+  padding: 50px;
+  border: 2px solid purple;
+  width: 80%;
+  margin: 5% auto;
+  background-color: rgb(199, 74, 199);
+  border-radius: 10px;
+
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 30px;
+}
+
+/* Step # 4: Add a Projects section with Grid */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: plum;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.project-card p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.project-card a {
+  color: purple;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+form {
+  width: 600px;
+  margin: 55px auto;
+  padding: 20px;
+  border: 2px solid purple;
+  border-radius: 10px;
+
+}
+
+form h2 {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.submit input[type="submit"] {
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0%;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(102, 28, 102);
+}
+
+footer {
+  background-color: rgb(102, 28, 102);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 0%;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
+footer p {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+footer a:hover {
+  color: plum;
+  text-decoration: underline;
+}
+
+/* Step # 5: Make it responsive (2 breakpoints) */
+
+/* Tablet (max-width: 900px) */
+@media screen and (max-width: 900px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .hero,
+  .about,
+  .skills,
+  .projects {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form {
+    width: 90%;
+  }
+
+  img {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+
+/* Mobile (max-width: 600px) */
+@media screen and (max-width:600px) {
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* Menu hidden by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgb(102, 28, 102);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    padding: 15px 20px;
+    z-index: 999;
+  }
+
+  /* Menu shows  */
+  #menu-open:target {
+    display: flex;
+  }
+
+  /* Swap ☰ open-icon with ☰ close-icon when menu is open */
+  .navbar:has(#menu-open:target) .icon-open {
+    display: none;
+  }
+
+  .navbar:has(#menu-open:target) .icon-close {
+    display: block;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    width: 110%;
+    padding: 15px;
+  }
+}
+
+/* Step # 6: Polish */
+/* All done */

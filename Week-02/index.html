@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Internship 2026_Week 01</title>
+
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Step # 1: Add a sticky navbar -->
+
+  <nav class="navbar" id="top">
+    <div class="name">Dania Nadeem</div>
+
+    <a href="#menu-open" class="menu-icon icon-open">☰</a>
+    <a href="#top" class="menu-icon icon-close">☰</a>
+
+    <div class="nav-links" id="menu-open">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Step # 2: Break the page into sections -->
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <img src="profile.webp" alt="profile picture" />
+    <h1>Hey, I'm Dania Nadeem.</h1>
+    <p>Aspiring Web Developer | Learning HTML, CSS & JavaScript</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science student with a strong interest in web development,programming,and database management. I
+      enjoy learning new technologies,solving
+      programming challenges,and building creative projects that improve my skills and experience.
+    </p>
+  </section>
+
+  <!-- Step # 3: Style the Skills section with Grid -->
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul class="skills-grid">
+      <li class="skill-card">Web Development</li>
+      <li class="skill-card">HTML</li>
+      <li class="skill-card">CSS</li>
+      <li class="skill-card">JavaScript</li>
+      <li class="skill-card">MongoSQL</li>
+      <li class="skill-card">Git & Github</li>
+    </ul>
+  </section>
+
+  <!-- Step # 4: Add a Projects section with Grid -->
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Cafe Website</h3>
+        <p>A responsive website built using HTML and CSS.</p>
+        <a href="https://dancing-hamster-57bcce.netlify.app" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini Shop</h3>
+        <p>An online shopping website with responsive product cards.</p>
+        <a href="https://steady-sunshine-18dae3.netlify.app" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>University Website</h3>
+        <p>A responsive university website designed using HTML and CSS</p>
+        <a href="https://snazzy-queijadas-970dc5.netlify.app" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Bags Website</h3>
+        <p>A modern e-commerce bags website built using React.</p>
+        <a href="https://bella-carry.netlify.app" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <form>
+      <h2>Contact Me</h2>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required minlength="2" />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+      <br /><br />
+
+      <div class="submit">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>
+      Visit my
+      <a href="https://github.com/danianadeem56/Web-Development-Internship-2026-DaniaNadeem" target="_blank">GitHub
+        Profile</a>
+    </p>
+  </footer>
+</body>
+
+</html>
