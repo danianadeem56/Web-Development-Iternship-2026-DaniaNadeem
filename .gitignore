@@ -1,0 +1,7 @@
+Week-04/Digital-skills-platform/Backend/venv/
+Week-04/Digital-skills-platform/frontend/node_modules/
+venv/
+__pycache__/
+*.pyc
+*.db
+.vscode/
