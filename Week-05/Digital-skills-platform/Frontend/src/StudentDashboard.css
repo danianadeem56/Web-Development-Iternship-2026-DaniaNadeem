@@ -1,0 +1,676 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Main Dashboard */
+.student-dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* Header */
+.student-header {
+  width: 100%;
+  background: #1e3a8a;
+  color: white;
+  padding: 18px 30px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.student-header-inner {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.student-logo {
+  font-size: 25px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Navigation */
+.student-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.student-nav-button,
+.student-logout-button {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.student-nav-button {
+  background: transparent;
+  color: white;
+}
+
+.student-nav-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.student-logout-button {
+  background: #ef4444;
+  color: white;
+}
+
+.student-logout-button:hover {
+  background: #dc2626;
+}
+
+/* Mobile Menu Button */
+.student-menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Main */
+.student-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  flex: 1;
+}
+
+/* Error */
+.student-error {
+  width: 100%;
+  padding: 13px;
+  margin: 0 0 25px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Welcome */
+.student-welcome {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.student-welcome h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  color: #1e3a8a;
+}
+
+.student-welcome p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 18px;
+}
+
+/* Dashbaord Cards */
+.student-dashboard-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.student-dashboard-card {
+  min-height: 220px;
+  border: none;
+  border-radius: 18px;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.2s;
+}
+
+.student-dashboard-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.student-card-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.student-dashboard-card h2 {
+  margin: 8px 0;
+  font-size: 22px;
+  color: #1e3a8a;
+}
+
+.student-dashboard-card p {
+  color: #666;
+  margin: 10px 0 15px;
+  font-size: 16px;
+}
+
+.student-dashboard-card span {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* Panel */
+.student-panel {
+  width: 100%;
+  text-align: center;
+}
+
+.student-panel > h1 {
+  color: #1e3a8a;
+  margin: 10px 0 35px;
+}
+
+/* Course Grid */
+.student-course-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.student-course-card {
+  background: white;
+  padding: 28px 22px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+.student-course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+.course-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.student-course-card h2 {
+  color: #1e3a8a;
+  margin: 10px 0;
+}
+
+.student-course-card p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Course Content */
+.course-content-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.course-content-box strong {
+  color: #1e3a8a;
+}
+
+.course-content-box p {
+  margin-bottom: 0;
+}
+
+/* Progress Bar */
+.student-progress {
+  margin-top: 20px;
+}
+
+.student-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.student-progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.student-progress strong {
+  color: #2563eb;
+  font-size: 14px;
+}
+
+/* Overall Progress */
+.student-overall-card {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.student-big-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.student-overall-card h2 {
+  color: #1e3a8a;
+}
+
+.progress-number {
+  display: block;
+  font-size: 30px;
+  color: #2563eb;
+  margin: 15px 0;
+}
+
+.student-overall-card p {
+  color: #666;
+}
+
+/* Info Grid */
+.student-info-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.student-info-card {
+  background: #f8fafc;
+  padding: 28px 22px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.student-info-card h2 {
+  color: #1e3a8a;
+}
+
+.student-info-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Grades */
+.student-grade-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.student-grade-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+.student-grade-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+.grade-icon {
+  font-size: 40px;
+}
+
+.student-grade-card h2 {
+  color: #1e3a8a;
+  font-size: 20px;
+}
+
+.student-grade-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.student-grade-card p strong {
+  color: #333;
+}
+
+.marks-display {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #2563eb;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Profile */
+.student-profile-card {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.student-profile-card h2 {
+  color: #1e3a8a;
+  margin-bottom: 25px;
+}
+
+.profile-details {
+  text-align: left;
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.profile-details p {
+  margin: 10px 0;
+  color: #555;
+  word-break: break-word;
+}
+
+/* Back Button */
+.student-back-button {
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  margin-top: 4%;
+  padding: 11px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.student-back-button:hover {
+  background: #172f70;
+  transform: translateY(-2px);
+}
+
+
+/* Loading / Empty */
+.student-loading,
+.student-empty {
+  text-align: center;
+  color: #666;
+  padding: 25px;
+}
+
+/* Footer */
+.student-footer {
+  width: 100%;
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: auto;
+}
+
+.student-footer p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .student-dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student-course-grid,
+  .student-info-grid,
+  .student-grade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 800px) {
+  .student-main {
+    padding: 35px 20px;
+  }
+
+  .student-course-grid,
+  .student-info-grid,
+  .student-grade-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .student-header {
+    padding: 15px 18px;
+  }
+
+  .student-header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .student-logo {
+    font-size: 22px;
+  }
+
+  /* Toggle */
+
+  .student-menu-toggle {
+    display: block;
+  }
+}
+
+  @media (max-width: 700px) {
+    .student-menu-toggle {
+      display: block;
+    }
+
+    .student-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 50%;
+      min-width: 220px;
+      background: #1e3a8a;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 7px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 0 0 12px 0;
+    }
+
+    .student-nav.student-nav-open {
+      display: flex;
+    }
+
+    .student-nav-button,
+    .student-logout-button {
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+    }
+  
+
+  /* Main */
+  .student-main {
+    padding: 30px 15px;
+  }
+
+  /* Welcome */
+  .student-welcome {
+    margin-bottom: 30px;
+  }
+
+  .student-welcome h1 {
+    font-size: 27px;
+  }
+
+  .student-welcome p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Dashbaord Cards */
+  .student-dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .student-dashboard-card {
+    min-height: auto;
+    padding: 25px 18px;
+  }
+
+  /* Panels */
+  .student-panel > h1 {
+    font-size: 27px;
+    margin-bottom: 28px;
+  }
+
+  /* Courses */
+  .student-course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-course-card {
+    padding: 23px 18px;
+  }
+
+  /* Ooverall */
+  .student-overall-card {
+    padding: 24px 18px;
+  }
+
+  /* Info */
+  .student-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Grades */
+  .student-grade-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Profile */
+  .student-profile-card {
+    padding: 25px 18px;
+  }
+
+  /* Footer */
+  .student-footer {
+    padding: 16px;
+  }
+
+  .student-footer p {
+    font-size: 12px;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 400px) {
+  .student-header {
+    padding: 13px 14px;
+  }
+
+  .student-logo {
+    font-size: 20px;
+  }
+
+  .student-menu-toggle {
+    font-size: 25px;
+  }
+
+  .student-main {
+    padding: 25px 12px;
+  }
+
+  .student-welcome h1 {
+    font-size: 24px;
+  }
+
+  .student-panel > h1 {
+    font-size: 24px;
+  }
+
+  .student-dashboard-card {
+    padding: 22px 15px;
+  }
+
+  .student-card-icon {
+    font-size: 38px;
+  }
+
+  .student-course-card,
+  .student-info-card,
+  .student-grade-card {
+    padding: 20px 16px;
+  }
+
+  .student-profile-card {
+    padding: 22px 15px;
+  }
+
+  .student-footer p {
+    margin: 0;
+    font-size: 16px;
+  }
+}
