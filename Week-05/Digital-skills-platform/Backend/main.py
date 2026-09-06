@@ -8,9 +8,7 @@ from models import User as UserModel, Course, Enrollment, Progress, Grade
 
 app = FastAPI()
 
-
-# CORS
-
+#CORS 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -19,11 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# =====================================================
-# REQUEST MODELS
-# =====================================================
-
+# Request Models
 class User(BaseModel):
     name: str
     email: str
@@ -50,22 +44,14 @@ class GradeCreate(BaseModel):
     assignment: str
     marks: int
 
-
-# =====================================================
-# HOME
-# =====================================================
-
+# Home
 @app.get("/")
 def home():
     return {
         "message": "Digital Skills Platform API is running"
     }
 
-
-# =====================================================
-# REGISTER
-# =====================================================
-
+# Register
 @app.post("/register")
 def register(user: User):
 
@@ -113,11 +99,7 @@ def register(user: User):
     finally:
         db.close()
 
-
-# =====================================================
-# LOGIN
-# =====================================================
-
+# Login
 @app.post("/login")
 def login(user: User):
 
@@ -152,11 +134,7 @@ def login(user: User):
     finally:
         db.close()
 
-
-# =====================================================
-# GET ALL STUDENTS
-# =====================================================
-
+# Get All Students
 @app.get("/students")
 def get_students():
 
@@ -181,11 +159,7 @@ def get_students():
     finally:
         db.close()
 
-
-# =====================================================
-# CREATE COURSE
-# =====================================================
-
+# Create Course
 @app.post("/courses")
 def create_course(course: CourseCreate):
 
@@ -216,12 +190,6 @@ def create_course(course: CourseCreate):
         db.add(new_course)
         db.commit()
         db.refresh(new_course)
-
-        # =================================================
-        # IMPORTANT:
-        # Automatically create 0% progress for every student
-        # for this NEW course.
-        # =================================================
 
         students = db.query(UserModel).filter(
             UserModel.role == "Student"
@@ -260,11 +228,7 @@ def create_course(course: CourseCreate):
     finally:
         db.close()
 
-
-# =====================================================
-# GET ALL COURSES
-# =====================================================
-
+# Get All Courses
 @app.get("/courses")
 def get_courses():
 
@@ -288,11 +252,7 @@ def get_courses():
     finally:
         db.close()
 
-
-# =====================================================
-# GET INSTRUCTOR COURSES
-# =====================================================
-
+# Get Instructor Courses
 @app.get("/courses/instructor/{instructor_id}")
 def get_instructor_courses(instructor_id: int):
 
@@ -318,11 +278,7 @@ def get_instructor_courses(instructor_id: int):
     finally:
         db.close()
 
-
-# =====================================================
-# UPDATE COURSE
-# =====================================================
-
+# Update Course
 @app.put("/courses/{course_id}")
 def update_course(
     course_id: int,
@@ -376,11 +332,7 @@ def update_course(
     finally:
         db.close()
 
-
-# =====================================================
-# DELETE COURSE
-# =====================================================
-
+# Delete Course
 @app.delete("/courses/{course_id}")
 def delete_course(course_id: int):
 
@@ -422,11 +374,7 @@ def delete_course(course_id: int):
     finally:
         db.close()
 
-
-# =====================================================
-# UPDATE STUDENT PROGRESS
-# =====================================================
-
+# Update student Progress
 @app.post("/progress")
 def update_progress(data: ProgressCreate):
 
@@ -496,11 +444,7 @@ def update_progress(data: ProgressCreate):
     finally:
         db.close()
 
-
-# =====================================================
-# GET STUDENT PROGRESS
-# =====================================================
-
+# Get Student Progress
 @app.get("/progress/{student_id}")
 def get_student_progress(student_id: int):
     db = SessionLocal()
@@ -529,10 +473,8 @@ def get_student_progress(student_id: int):
 
     finally:
         db.close()
-# =====================================================
-# ADD GRADE
-# =====================================================
 
+# Add Grade
 @app.post("/grades")
 def add_grade(data: GradeCreate):
 
@@ -595,11 +537,7 @@ def add_grade(data: GradeCreate):
     finally:
         db.close()
 
-
-# =====================================================
-# GET STUDENT GRADES
-# =====================================================
-
+# Get Student Grades
 @app.get("/grades/{student_id}")
 def get_student_grades(student_id: int):
 
@@ -625,11 +563,7 @@ def get_student_grades(student_id: int):
     finally:
         db.close()
 
-
-# =====================================================
-# DELETE GRADE
-# =====================================================
-
+# Delete Grade
 @app.delete("/grades/{grade_id}")
 def delete_grade(grade_id: int):
 
@@ -657,11 +591,7 @@ def delete_grade(grade_id: int):
     finally:
         db.close()
 
-  
-# =====================================================
-# DELETE INSTRUCTOR + HIS COURSES
-# =====================================================
-
+# Delete Instructor & Courses
 @app.delete("/instructors/{instructor_id}")
 def delete_instructor(instructor_id: int):
 
