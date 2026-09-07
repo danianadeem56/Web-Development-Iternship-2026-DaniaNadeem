@@ -88,7 +88,7 @@ body {
 /* Media Queries */
 
 /* Tablet */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   .login-container {
     padding: 20px;
   }
@@ -97,7 +97,7 @@ body {
     max-width: 380px;
     padding: 30px;
   }
-}
+} 
 
 /* Mobile */
 @media (max-width: 480px) {
@@ -133,10 +133,10 @@ body {
     padding: 11px;
     font-size: 15px;
   }
-}
+} 
 
 /* Small Mobile */
-@media (max-width: 360px) {
+ @media (max-width: 360px) {
   .login-container {
     padding: 10px;
   }
@@ -147,5 +147,4 @@ body {
 
   .login-box h1 {
     font-size: 23px;
-  }
-}
+  } } 

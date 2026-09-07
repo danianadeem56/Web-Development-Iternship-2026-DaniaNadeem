@@ -536,20 +536,42 @@ function InstructorDashboard({ name, role, userId, onLogout }) {
         }
       );
 
-      const data = await response.json();
+      // DELETE APIs sometimes return an empty response.
+      // So read text first instead of always calling response.json().
+      const responseText = await response.text();
+
+      let data = {};
+      if (responseText) {
+        try {
+          data = JSON.parse(responseText);
+        } catch {
+          data = {};
+        }
+      }
 
       if (!response.ok) {
-        setError(
+        setCourseMessage(
           data.detail || "Failed to delete course."
         );
+        setError("");
         return;
       }
 
+      // Remove any old update/error message.
+      setError("");
+
+      // Show the correct delete message.
+      setCourseMessage("Course deleted successfully!");
+
+      // Refresh the course list.
       await fetchCourses();
 
     } catch (err) {
       console.error("Delete course error:", err);
-      setError("Server error.");
+      setError("");
+      setCourseMessage(
+        "Server error. Please make sure the backend is running."
+      );
     }
   };
 
